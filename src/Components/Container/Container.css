@@ -1,0 +1,8 @@
+.quote-container {
+    width: auto;
+    max-width: 900px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.342);
+    box-shadow: 0px 10px 10px 10px rgba(36, 173, 8, 0.2);
+}
