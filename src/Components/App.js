@@ -16,12 +16,13 @@ class App extends Component {
     }
 
     onNewQuote = async () => {
+        this.setState({isLoading: true});
         const response = await stormconsultancy.get('/quotes');
         this.setState({quote: response.data, isLoading: false});
     }
 
     onTweetQuote = () => {
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${this.state.quote.quote} \n- ${this.state.quote.character}`;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${this.state.quote[0].quote} \n- ${this.state.quote[0].character}`;
         window.open(twitterUrl, '_blank');
     }
 
