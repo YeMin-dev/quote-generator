@@ -7,8 +7,8 @@ import './Quote.css'
 const Quote = ({onNewRequest, quote, onTweet}) => {
 
     let setSizeForLongText = '';
-    if(quote.quote) {
-        setSizeForLongText = quote.quote.length > 50 ? 'long-quote' : '';
+    if(quote[0].quote) {
+        setSizeForLongText = quote[0].quote.length > 50 ? 'long-quote' : '';
     }
 
     return (
@@ -18,10 +18,10 @@ const Quote = ({onNewRequest, quote, onTweet}) => {
                 id="quote" 
                 className={setSizeForLongText}
             >
-                {' ' + quote.quote}
+                {' ' + quote[0].quote}
             </span>
             <div className="quote-author">
-                <span id="author">{quote.author}</span>
+                <span id="author">{quote[0].character}</span>
             </div>
             <div className="button-container">
                 <Button 

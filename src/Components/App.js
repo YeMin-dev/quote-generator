@@ -16,12 +16,12 @@ class App extends Component {
     }
 
     onNewQuote = async () => {
-        const response = await stormconsultancy.get('/random.json');
+        const response = await stormconsultancy.get('/quotes');
         this.setState({quote: response.data, isLoading: false});
     }
 
     onTweetQuote = () => {
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${this.state.quote.quote} \n- ${this.state.quote.author}`;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${this.state.quote.quote} \n- ${this.state.quote.character}`;
         window.open(twitterUrl, '_blank');
     }
 
